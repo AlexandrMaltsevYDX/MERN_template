@@ -1,0 +1,66 @@
+"paths": {
+    "/commons/feedback_requests/create_new": {
+        "post": {
+            "summary": "Create feedback request.",
+            "x-openapi-router-controller": "collector.uma.entity_handlers.models.feedback.endpoints",
+            "operationId": "create_new",
+            "tags": [
+                "Create Feedback Request"
+            ],
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/CreateFeedbackDetail"
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Create Feedback Detail."
+                },
+                "400": {
+                    "description": "400"
+                },
+                "401": {
+                    "description": "401"
+                },
+                "403": {
+                    "description": "403"
+                }
+            }
+        }
+    }
+},
+"components": {
+    "schemas": {
+        "CreateFeedbackDetail": {
+            "type": "object",
+            "description": "Create Feedback Detail.",
+            "properties": {
+                "context": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Context of feedback request."
+                },
+                "proposed_respondents": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "List of proposed respondents."
+                },
+                "employee_id": {
+                    "type": "integer",
+                    "description": "Employee ID."
+                },
+                "type": {
+                    "type": "integer",
+                    "description": "Type of feedback request."
+                }
+            }
+        }
+    }
+}
