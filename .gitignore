@@ -1,2 +1,9 @@
-node_modules
-dist
+backend/node_modules
+backend/dist
+backend/.vscode/settings.json
+
+
+
+frontend/node_modules
+frontend/dist
+frontend/.vscode/settings.json
